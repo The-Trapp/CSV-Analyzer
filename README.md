@@ -55,57 +55,6 @@ cp .env.example .env
 # Run the app
 streamlit run app.py
 ```
-
----
-
-## 🌐 Deploy Constantly 24/7 for Free (Streamlit Cloud)
-
-The fastest and easiest way to keep this app running constantly on the web for your portfolio or personal website:
-
-1. **Push this folder to a new GitHub repository:**
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial commit of AI CSV Analyzer"
-   git branch -M main
-   git remote add origin https://github.com/<your-username>/<repo-name>.git
-   git push -u origin main
-   ```
-
-2. **Deploy on Streamlit Community Cloud:**
-   - Go to [share.streamlit.io](https://share.streamlit.io/) and sign in with GitHub.
-   - Click **New app**.
-   - Select your repository, branch (`main`), and set the main file path to `app.py`.
-   - Click **Advanced settings** -> **Secrets** and paste:
-     ```toml
-     GEMINI_API_KEY = "your_actual_gemini_api_key_here"
-     GEMINI_MODEL = "gemini-flash-latest"
-     ```
-   - Click **Deploy!**
-
-Your app is now live 24/7 at `https://<your-app-name>.streamlit.app`!
-
----
-
-## 💻 Embed on Your Personal Website
-
-To embed your live CSV Analyzer directly into any page of your personal website, portfolio, or blog, add this `<iframe>` snippet to your HTML:
-
-```html
-<div style="width: 100%; max-width: 1200px; margin: 0 auto;">
-  <iframe
-    src="https://<your-app-name>.streamlit.app/?embed=true"
-    width="100%"
-    height="850px"
-    frameborder="0"
-    style="border: 1px solid #e2e8f0; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);"
-    allow="clipboard-write"
-  ></iframe>
-</div>
-```
-
-*(Replace `<your-app-name>` with your actual deployed Streamlit URL).*
-
 ---
 
 ## 🐳 Docker Deployment
@@ -144,12 +93,11 @@ CSV Analyzer/
 ├── README.md                     # Documentation
 └── requirements.txt              # Pip requirements for cloud deployment
 ```
-
 ---
 
 ## 🔒 Security & Privacy
 
 - **No Data Persistence:** Uploaded CSVs are stored in memory only during the active browser session and never saved to a database or disk.
-- **Client Key Isolation:** Visitors can provide their own Gemini API key in the sidebar if you prefer not to use your own cloud secret.
+- **Client Key Isolation:** Visitors can provide their own Gemini API key in the sidebar if they prefer.
 - **Safe Execution:** Chart execution explicitly checks for and prevents execution of forbidden operations (`os`, `sys`, `subprocess`, `open`).
 
